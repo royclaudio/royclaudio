@@ -13,6 +13,10 @@
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+@font-face {
+  font-family: "Cameliya";
+  src: local("Cameliya"), url("~Cameliya/Cameliya.otf") format("opentype");
+}
 
 .links {
   position: relative;
@@ -21,12 +25,14 @@
 
 /* The actual popup */
 .links .popuptext {
+  display: grid;
+  place-items: start;
   visibility: hidden;
   background-color: #ffeeee;
   width: 250px;
   font-family: "Times New Roman";
   font-size: 12px;
-  color: #ffeeee;
+  color: black;
   text-align: center;
   border-radius: 6px;
   padding: 10px 10px 10px 10px;
@@ -57,32 +63,42 @@
 }
 
 .navMenu a:hover {
+  color: #ffeeee;
+  cursor: grab;
+}
+.links a:hover {
   color: red;
+  cursor: grab;
 }
 
 .navMenu .dot {
   width: 6px;
   height: 6px;
-  background: red;
+  background: #ffeeee;
   border-radius: 50%;
   opacity: 0;
+
   -webkit-transform: translateX(30px);
   transform: translateX(30px);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
+.navMenu a:hover ~ .dot {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
 .navMenu a:nth-child(1):hover ~ .dot {
-  -webkit-transform: translateX(30px);
-  transform: translateX(30px);
+  -webkit-transform: translateX(2em);
+  transform: translateX(2em);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
 .navMenu a:nth-child(2):hover ~ .dot {
-  -webkit-transform: translateX(170px);
-  transform: translateX(170px);
+  -webkit-transform: translateX(7em);
+  transform: translateX(8em);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
@@ -90,7 +106,7 @@
 
 .navMenu a:nth-child(3):hover ~ .dot {
   -webkit-transform: translateX(320px);
-  transform: translateX(312px);
+  transform: translateX(17em);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
@@ -98,14 +114,14 @@
 
 .navMenu a:nth-child(4):hover ~ .dot {
   -webkit-transform: translateX(415px);
-  transform: translateX(415px);
+  transform: translateX(27em);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 .navMenu a:nth-child(5):hover ~ .dot {
   -webkit-transform: translateX(475px);
-  transform: translateX(475px);
+  transform: translateX(32em);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
@@ -123,17 +139,38 @@
   grid-row: 1/-1;
   grid-column: 1/-1;
 }
+svg .flag-style:hover {
+  fill: #ffeeee;
+}
+.primary-header__flag {
+  margin-top: 1em;
+  grid-column: 1;
+}
 
+.primary-header__title {
+  text-decoration: none;
+  font-family: Cameliya;
+  color: black;
+  font-size: 100px;
+  grid-column: 2;
+}
+.primary-header__title:hover {
+  text-decoration: none;
+  cursor: grab;
+  color: #ffeeee;
+}
+.primary-header__flag:hover {
+  text-decoration: none;
+  cursor: grab;
+  color: #ffeeee;
+  fill: #ffeeee;
+}
 @media (min-width: 50em) {
   .primary-header {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
+    padding: 10px;
   }
-  .primary-header__flag {
-    grid-column: 1;
-  }
-  .primary-header__title {
-    grid-column: 2;
-  }
+
   [class~="nav"] {
     display: none;
     opacity: 0;
@@ -147,10 +184,16 @@
   .navMenu .dot {
     visibility: hidden;
   }
-}
-@media screen and (max-width: 800px) {
+  .primary-header__flag {
+    margin-top: 0.5em;
+
+    opacity: 0.5;
+    filter: blur(1px);
+    height: 50px;
+  }
   .primary-header__title {
-    opacity: 0.4;
-    filter: blur(4px);
+    opacity: 0.5;
+    filter: blur(1px);
+    font-size: 50px;
   }
 }

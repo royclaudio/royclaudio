@@ -28,8 +28,7 @@
   margin-right: 10px;
   font-size: 15px;
   overflow: scroll;
-  height: 100px;
-  width: 450px;
+  height: auto;
   border-width: 1.5px;
   border-style: solid;
   border-color: black;
@@ -166,15 +165,20 @@ a {
 
 .searchs {
   background-color: transparent;
-  align-self: end;
+  margin-left: 415px;
+  padding: 0px;
   border: 0;
   width: 50px;
   height: 50px;
 }
 
-.profilebutton:hover {
+.searchs:hover {
   transform: rotate(90deg);
 }
+.searchs.active:hover {
+  transform: rotate(-90deg);
+}
+
 .searchbutton {
   background-color: transparent;
   margin: 50px;

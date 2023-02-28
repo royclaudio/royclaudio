@@ -40,14 +40,14 @@ export class InfoContainer extends Component {
     return (
       <div className="container-info">
         <div className="info-header">
-          <img className="img" src={Picturesrc} alt={title} />
+          <h6>{this.props.type}</h6>
           <h2>
             <a
               target="_blank"
               className="title-style"
               href="https://twitter.com/home"
             >
-              {title}
+              {this.props.title}
             </a>
           </h2>
         </div>
@@ -93,7 +93,12 @@ export class InfoContainer extends Component {
           <button className="searchbutton">
             <a
               target="_blank"
-              href={"http://www.google.co.in/search?q=" + title + " " + Address}
+              href={
+                "http://www.google.co.in/search?q=" +
+                this.props.title +
+                " " +
+                this.props.address
+              }
             >
               <svg
                 fill="#000000"
@@ -245,7 +250,7 @@ export class InfoContainer extends Component {
                     target="_blank"
                     href={
                       "https://www.linkedin.com/search/results/all/?keywords=" +
-                      title +
+                      this.props.title +
                       "&origin=GLOBAL_SEARCH_HEADER&sid=uPE"
                     }
                   >
@@ -293,7 +298,10 @@ export class InfoContainer extends Component {
                 >
                   <a
                     target="_blank"
-                    href={"https://www.facebook.com/search/top?q=" + title}
+                    href={
+                      "https://www.facebook.com/search/top?q=" +
+                      this.props.title
+                    }
                   >
                     <svg
                       width="50px"
@@ -365,7 +373,7 @@ export class InfoContainer extends Component {
                   <a
                     href={
                       "https://twitter.com/search?q=" +
-                      title +
+                      this.props.title +
                       "&src=typed_query"
                     }
                   >
@@ -410,13 +418,16 @@ export class InfoContainer extends Component {
               <a
                 className="title-style"
                 href={
-                  "http://www.google.co.in/search?q=" + title + " " + Address
+                  "http://www.google.co.in/search?q=" +
+                  this.props.title +
+                  " " +
+                  this.props.address
                 }
               >
-                {Address}
+                {this.props.address}
               </a>
             </h6>
-            <p>{infobio}</p>
+            <p>{this.props.info}</p>
           </div>
         ) : null}
       </div>

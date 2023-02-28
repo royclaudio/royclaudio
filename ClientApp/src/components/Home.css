@@ -7,19 +7,16 @@
 }
 .sidebar {
   position: fixed;
-  top: 300px;
+  top: 280px;
 }
-
 div.content {
   margin-left: 510px;
 }
-
 .content-grid {
   place-items: center;
   display: grid;
   grid-template-rows: auto 1fr;
 }
-
 @media screen and (max-width: 1110px) {
   .sidebar {
     position: absolute;

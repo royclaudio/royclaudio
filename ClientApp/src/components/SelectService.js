@@ -55,7 +55,7 @@ export class SelectService extends Component {
               name="vehicle1"
               value="Bike"
             ></input>{" "}
-            &nbsp;Community Services
+            &nbsp; Housing Services & Programs
           </h6>
           <h6>
             <input
@@ -64,7 +64,7 @@ export class SelectService extends Component {
               name="vehicle1"
               value="Bike"
             ></input>{" "}
-            &nbsp;Community Services
+            &nbsp; Health and social Services
           </h6>
           <h6>
             <input
@@ -73,7 +73,34 @@ export class SelectService extends Component {
               name="vehicle1"
               value="Bike"
             ></input>{" "}
-            &nbsp;Community Services
+            &nbsp; Senior Services
+          </h6>
+          <h6>
+            <input
+              type="checkbox"
+              id="vehicle1"
+              name="vehicle1"
+              value="Bike"
+            ></input>{" "}
+            &nbsp; Mental Health
+          </h6>
+          <h6>
+            <input
+              type="checkbox"
+              id="vehicle1"
+              name="vehicle1"
+              value="Bike"
+            ></input>{" "}
+            &nbsp; Substance Use Treatment
+          </h6>
+          <h6>
+            <input
+              type="checkbox"
+              id="vehicle1"
+              name="vehicle1"
+              value="Bike"
+            ></input>{" "}
+            &nbsp; Employment Services
           </h6>
         </div>
         <button

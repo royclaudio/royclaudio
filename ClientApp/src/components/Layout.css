@@ -1,7 +1,7 @@
 .main-layout {
   min-height: 100vh;
   min-height: 100dvh;
-  background-color: rgb(255, 203, 203);
+  background-color: rgb(221, 16, 16);
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
