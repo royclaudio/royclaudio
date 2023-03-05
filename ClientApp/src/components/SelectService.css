@@ -27,7 +27,7 @@
   margin-left: 10px;
   margin-right: 10px;
   font-size: 15px;
-  overflow: scroll;
+  /* overflow: scroll; */
   height: auto;
   border-width: 1.5px;
   border-style: solid;
@@ -41,7 +41,7 @@
   );
 }
 .container-info:hover {
-  box-shadow: 0 0 4px 3px red;
+  box-shadow: 0 0 4px 3px #6db966;
 }
 .grid-container {
   display: grid;

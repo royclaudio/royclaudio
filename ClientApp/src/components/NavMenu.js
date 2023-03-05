@@ -70,7 +70,7 @@ export class NavMenu extends Component {
             className="primary-header__title"
             href="https://www.linkedin.com/in/royclaudio/"
           >
-            Roy Claudio{" "}
+            Roy Claudio
           </a>
           <InfoButton
             info=" 
@@ -81,17 +81,11 @@ export class NavMenu extends Component {
         </div>
         <nav class="navMenu">
           <a href="/">Home</a>
-          <a className="links" href="/fetch-data">
-            Homeless
-            <span className="dot"></span>
-          </a>
-          <a href="/counter">Administrators</a>
-          <a className="links" href="/fetch-data">
-            Resources
-            <span className="dot"></span>
-          </a>
+
+          <a href="/counter">Projects</a>
+
           <a className="links">
-            Links
+            Resources
             <span className="popuptext">
               <a href="https://www.cabq.gov/family/services/homeless-services">
                 NM |&nbsp; Resources{" "}

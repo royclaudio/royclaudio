@@ -14,12 +14,17 @@ export class Home extends Component {
   componentDidMount() {
     this.populateShelterData();
   }
-
+  uniq(a) {
+    var seen = {};
+    return a.filter(function (item) {
+      return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+    });
+  }
   static renderitems(items) {
     return (
-      <div>
+      <div className="grid-home">
         {items.map((item) => (
-          <div>
+          <div className="grid-element">
             <InfoContainer
               title={item.name}
               address={item.address}
@@ -40,19 +45,15 @@ export class Home extends Component {
       Home.renderitems(this.state.items)
     );
     return (
-      <div className="home-primary">
+      <div className="home-content">
+        <h1 className="title">
+          Community Services
+          <InfoButton info=" Services available. There are many, click a button to learn more" />
+        </h1>
         <div class="sidebar">
           <SelectService />
         </div>
-        <div class="content">
-          <h1 className="title">
-            Community Services{" "}
-            <InfoButton info=" Services available.    There are many, click a button to learn more" />
-          </h1>
-          <div className="content-grid">
-            <div>{contents}</div>
-          </div>
-        </div>
+        <div class="content">{contents}</div>
       </div>
     );
   }

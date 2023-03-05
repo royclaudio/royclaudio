@@ -1,7 +1,7 @@
-﻿.navMenu {
+﻿/* .navMenu {
   position: relative;
-}
-/** the dot **/
+} */
+
 .navMenu a {
   color: black;
   text-decoration: none;
@@ -23,7 +23,6 @@
   display: inline-block;
 }
 
-/* The actual popup */
 .links .popuptext {
   display: grid;
   place-items: start;
@@ -41,11 +40,8 @@
   bottom: -145px;
   left: -90px;
   box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
-  /*bottom: 125%;*/
-  /*left: 50%;*/
 }
 
-/* Popup arrow */
 .links .popuptext::after {
   content: "";
   position: absolute;
@@ -57,7 +53,6 @@
   border-color: transparent transparent #555 transparent;
 }
 
-/* Toggle this class - hide and show the popup */
 .links:hover .popuptext {
   visibility: visible;
 }
@@ -71,69 +66,13 @@
   cursor: grab;
 }
 
-.navMenu .dot {
-  width: 6px;
-  height: 6px;
-  background: #ffeeee;
-  border-radius: 50%;
-  opacity: 0;
-
-  -webkit-transform: translateX(30px);
-  transform: translateX(30px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.navMenu a:hover ~ .dot {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-.navMenu a:nth-child(1):hover ~ .dot {
-  -webkit-transform: translateX(2em);
-  transform: translateX(2em);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu a:nth-child(2):hover ~ .dot {
-  -webkit-transform: translateX(7em);
-  transform: translateX(8em);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu a:nth-child(3):hover ~ .dot {
-  -webkit-transform: translateX(320px);
-  transform: translateX(17em);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu a:nth-child(4):hover ~ .dot {
-  -webkit-transform: translateX(415px);
-  transform: translateX(27em);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-.navMenu a:nth-child(5):hover ~ .dot {
-  -webkit-transform: translateX(475px);
-  transform: translateX(32em);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
 .primary {
   display: grid;
   place-items: center;
 }
 .primary-header {
   display: grid;
-  place-items: start;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto;
 }
 .primary-header > * {
   grid-row: 1/-1;
@@ -165,17 +104,7 @@ svg .flag-style:hover {
   color: #ffeeee;
   fill: #ffeeee;
 }
-@media (min-width: 50em) {
-  .primary-header {
-    grid-template-columns: auto 1fr;
-    padding: 10px;
-  }
 
-  [class~="nav"] {
-    display: none;
-    opacity: 0;
-  }
-}
 @media screen and (max-width: 1000px) {
   .navMenu {
     display: grid;

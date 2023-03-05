@@ -3,11 +3,53 @@ import "./SelectService.css";
 import { InfoButton } from "./InfoButton";
 
 export class SelectService extends Component {
+  handleChange = () => {
+    this.setChecked(!this.checked);
+  };
   constructor(props) {
     super(props);
     this.state = {
       hide: false,
+      items: null,
+      loading: true,
     };
+  }
+  componentDidMount() {
+    this.populateShelterData();
+  }
+  unique(arr) {
+    return Array.from(new Set(arr));
+  }
+
+  static renderitems(items) {
+    let list = [];
+    items.forEach((element) => {
+      return list.push(element.type.toString());
+    });
+    const uniqueTags = [];
+    items.map((img) => {
+      if (uniqueTags.indexOf(img.type) === -1) {
+        uniqueTags.push(img.type);
+      }
+    });
+    return (
+      /* &nbsp; <p onClick={this.handleChange}>{item}</p> */
+
+      <div>
+        {uniqueTags.map((item) => (
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                checked={this.checked}
+                onChange={this.handleChange}
+              ></input>
+              &nbsp; {item}
+            </label>
+          </div>
+        ))}
+      </div>
+    );
   }
   clicked() {
     if (this.state.hide === false) {
@@ -31,79 +73,23 @@ export class SelectService extends Component {
       });
     }
   }
+
   render() {
+    let contents = this.state.loading ? (
+      <p>
+        <em>Loading...</em>
+      </p>
+    ) : (
+      SelectService.renderitems(this.state.items)
+    );
     return (
       <div className="container-info">
         <h2 className="title">
-          Select Service{" "}
-          <InfoButton info=" Services available.    There are many, click a button to learn more" />{" "}
+          Select Service
+          <InfoButton info=" Services available. There are many, click a button to learn more" />
         </h2>
-        <div className="selector">
-          <h6>
-            <input
-              type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
-            ></input>{" "}
-            &nbsp; Homeless Services
-          </h6>
-          <h6>
-            <input
-              type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
-            ></input>{" "}
-            &nbsp; Housing Services & Programs
-          </h6>
-          <h6>
-            <input
-              type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
-            ></input>{" "}
-            &nbsp; Health and social Services
-          </h6>
-          <h6>
-            <input
-              type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
-            ></input>{" "}
-            &nbsp; Senior Services
-          </h6>
-          <h6>
-            <input
-              type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
-            ></input>{" "}
-            &nbsp; Mental Health
-          </h6>
-          <h6>
-            <input
-              type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
-            ></input>{" "}
-            &nbsp; Substance Use Treatment
-          </h6>
-          <h6>
-            <input
-              type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
-            ></input>{" "}
-            &nbsp; Employment Services
-          </h6>
-        </div>
-        <button
+        <div className="selector">{contents}</div>
+        {/* <button
           className={this.state.hide ? "searchs active" : "searchs"}
           onClick={() => this.clicked()}
         >
@@ -138,7 +124,7 @@ export class SelectService extends Component {
               ></path>
             </g>
           </svg>
-        </button>
+        </button> */}
         {this.state.hide ? (
           <div className="selector">
             <p>Here is a list of the things you selected</p>
@@ -146,6 +132,11 @@ export class SelectService extends Component {
         ) : null}
       </div>
     );
+  }
+  async populateShelterData() {
+    const response = await fetch("shelters");
+    const data = await response.json();
+    this.setState({ items: data, loading: false });
   }
 }
 
