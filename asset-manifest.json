@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/royclaudio.github.io/static/css/main.1b962370.css",
+    "main.js": "/royclaudio.github.io/static/js/main.c6b233b5.js",
+    "static/js/787.f28c533c.chunk.js": "/royclaudio.github.io/static/js/787.f28c533c.chunk.js",
+    "service-worker.js": "/royclaudio.github.io/service-worker.js",
+    "static/media/Cameliya.otf": "/royclaudio.github.io/static/media/Cameliya.f76bc83f9d0c53ea28b3.otf",
+    "index.html": "/royclaudio.github.io/index.html",
+    "main.1b962370.css.map": "/royclaudio.github.io/static/css/main.1b962370.css.map",
+    "main.c6b233b5.js.map": "/royclaudio.github.io/static/js/main.c6b233b5.js.map",
+    "787.f28c533c.chunk.js.map": "/royclaudio.github.io/static/js/787.f28c533c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b962370.css",
+    "static/js/main.c6b233b5.js"
+  ]
+}
