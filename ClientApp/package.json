@@ -1,5 +1,6 @@
 {
   "name": "reacthomeless",
+  "homepage": "https://royclaudio.github.io/royclaudio.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -51,6 +52,8 @@
   "scripts": {
     "prestart": "node aspnetcore-https && node aspnetcore-react",
     "start": "rimraf ./build && react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
